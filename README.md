@@ -9,7 +9,7 @@
 
 ## Soal
 
-#### Nomer 1,2, dan 3
+### Nomer 1,2, dan 3
 
 **Membuat sebuah website utama dengan alamat http://semeruyyy.pw yang memiliki alias http://www.semeruyyy.pw, dan subdomain http://penanjakan.semeruyyy.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO**
 
@@ -34,7 +34,7 @@ dan tambahkan `nameserver "IP MALANG"` seperti gambar berikut
 dan lakukan ping di salah satu client `ping semerub11.pw` , `ping www.semerub11.pw` , dan `ping penanjakan.semerub11.pw` seperti gambar berikut yang dilakukan di client GRESIK :
 ![1.4](asset/1.4.png)
 
-#### Nomer 4
+### Nomer 4
 
 **Membuat reverse domain untuk domain utama**
 Untuk membuat reverse domain utama inputkan `nano /etc/bind/named.conf.local` pada uml MALANG dan melakukan konfigurasi file tersebut dengan inputkan
@@ -53,7 +53,7 @@ setelah itu copykan file db.local ke dalam file 83.151.10.in-addr.arpa pada fold
 lalu restart bind9 dengan melakukan perintah `service bind9 restart` dan untuk mengeceknya pada salah satu clinet kita install dulu dnsutils dengan perintah apt-get install dnsutils lalu inputkan perintah `host -t PTR 10.151.83.100` pada salah satu client tersebut. Berikut hasilnya :
 ![4.3](asset/4.3.png)
 
-#### Nomer 5
+### Nomer 5
 
 **Membuat Server Slave di MOJOKERTO**
 Konfigurasi Pada Server MALANG.
