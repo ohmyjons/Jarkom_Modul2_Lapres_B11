@@ -11,7 +11,7 @@
 
 #### Nomer 1,2, dan 3
 
-**_Membuat sebuah website utama dengan alamat http://semeruyyy.pw_ yang memiliki alias http://www.semeruyyy.pw, dan subdomain http://penanjakan.semeruyyy.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO**
+**Membuat sebuah website utama dengan alamat http://semeruyyy.pw yang memiliki alias http://www.semeruyyy.pw, dan subdomain http://penanjakan.semeruyyy.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO**
 
 Buka UML server MALANG lakukan `apt-get update` dan install bind9 pada UML MALANG. Setelah itu lakukan `nano /etc/bind/named.conf.local`.
 Konfigurasi server MALANG seperti gambar dibawah :
@@ -36,8 +36,8 @@ dan lakukan ping di salah satu client `ping semerub11.pw` , `ping www.semerub11.
 
 #### Nomer 4
 
-**_Membuat reverse domain untuk domain utama_**
-Untuk membuat reverse domain utama kita inputkan `nano /etc/bind/named.conf.local` pada uml MALANG dan melakukan konfigurasi file tersebut dengan inputkan
+**Membuat reverse domain untuk domain utama**
+Untuk membuat reverse domain utama inputkan `nano /etc/bind/named.conf.local` pada uml MALANG dan melakukan konfigurasi file tersebut dengan inputkan
 
 > zone "83.151.10.in-addr.arpa" {
 > type master;
@@ -46,4 +46,26 @@ Untuk membuat reverse domain utama kita inputkan `nano /etc/bind/named.conf.loca
 
 seperti gambar berikut :
 ![4.1](asset/4.1.png)
-setelah itu copykan file db.local ke dalam file 83.151.10.in-addr.arpa pada folder jarkom dengan perintah `cp /etc/bind/db.local /etc/bind/jarkom/83.151.10.in-addr.arpa`
+
+setelah itu copykan file db.local ke dalam file 83.151.10.in-addr.arpa pada folder jarkom dengan perintah `cp /etc/bind/db.local /etc/bind/jarkom/83.151.10.in-addr.arpa` setelah file tersebut di konfigurasi seperti gambar berikut :
+![4.2](asset/4.2.png)
+
+lalu restart bind9 dengan melakukan perintah `service bind9 restart` dan untuk mengeceknya pada salah satu clinet kita install dulu dnsutils dengan perintah apt-get install dnsutils lalu inputkan perintah `host -t PTR 10.151.83.100` pada salah satu client tersebut. Berikut hasilnya :
+![4.3](asset/4.3.png)
+
+#### Nomer 5
+
+**Membuat Server Slave di MOJOKERTO**
+Konfigurasi Pada Server MALANG.
+Edit file /etc/bind/named.conf.local dan disesuaikan dengan syntax berikut :
+![5.1](asset/5.1.png)
+
+Restart bind9 dengan melakukan perintah `service bind9 restart`
+lalu lakukan konfigurasi pada server di mojokerto dengan menjalankan perintah `apt-get update` dan install bind9 pada server mojokerto.
+Kemudian buka file `/etc/bind/named.conf.local` pada MOJOKERTO dan ditambhakan syntax seperti gambar berikut :
+![5.2](asset/5.2.png)
+
+dan restart bind9.
+
+untuk testing pada nameserver di CLIENT arahkan ke ip mojokerto dan matikan bind9 pada malang. Lakukan ping ke semerub11.pw di CLIENT. Beikut gambarnya :
+![5.3](asset/5.3.png)
