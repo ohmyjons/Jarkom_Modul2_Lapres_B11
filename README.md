@@ -33,3 +33,17 @@ dan tambahkan `nameserver "IP MALANG"` seperti gambar berikut
 
 dan lakukan ping di salah satu client `ping semerub11.pw` , `ping www.semerub11.pw` , dan `ping penanjakan.semerub11.pw` seperti gambar berikut yang dilakukan di client GRESIK :
 ![1.4](asset/1.4.png)
+
+#### Nomer 4
+
+**_Membuat reverse domain untuk domain utama_**
+Untuk membuat reverse domain utama kita inputkan `nano /etc/bind/named.conf.local` pada uml MALANG dan melakukan konfigurasi file tersebut dengan inputkan
+
+> zone "83.151.10.in-addr.arpa" {
+> type master;
+> filr "/etc/bind/semeruyyy/83.151.10.in-addr.arpa";
+> }
+
+seperti gambar berikut :
+![4.1](asset/4.1.png)
+setelah itu copykan file db.local ke dalam file 83.151.10.in-addr.arpa pada folder jarkom dengan perintah `cp /etc/bind/db.local /etc/bind/jarkom/83.151.10.in-addr.arpa`
