@@ -69,3 +69,7 @@ dan restart bind9.
 
 untuk testing pada nameserver di CLIENT arahkan ke ip mojokerto dan matikan bind9 pada malang. Lakukan ping ke semerub11.pw di CLIENT. Beikut gambarnya :
 ![5.3](asset/5.3.png)
+
+### Nomer 6.
+
+**Mmebuat sub domain http://gunung.semerub11.pw yang didelegasikan di server MOJOKERTO dan diarahkan ke server Probolinggo**
