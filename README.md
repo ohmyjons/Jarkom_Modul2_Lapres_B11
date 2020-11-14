@@ -31,4 +31,5 @@ Untuk cek konfigurasi tersebut dapat melakukan ping ke alamt yang sudah kita bua
 dan tambahkan `nameserver "IP MALANG"` seperti gambar berikut
 ![1.3](asset/1.3.png)
 
-dan lakukan ping di salah satu client `ping semerub11.pw` , `ping www.semerub11.pw` , dan `ping penanjakan.semerub11.pw`
+dan lakukan ping di salah satu client `ping semerub11.pw` , `ping www.semerub11.pw` , dan `ping penanjakan.semerub11.pw` seperti gambar berikut yang dilakukan di client GRESIK :
+![1.4](asset/1.4.png)
