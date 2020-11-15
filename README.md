@@ -205,3 +205,21 @@ Pindah ke directory `etc/apache2/sites-available` pada probolinggo kemudian buka
 Lalu buka browser dan akses penanjakan.semerub11.pw/"Input terserah yang penting tidak ada dalam root file"
 contoh `penanjakan.semerub11.pw/a`
 ![12.2](asset/12.2.png)
+
+### Nomer 13
+
+**Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruyyy.pw/public/javascripts. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruyyy.pw/js.**
+
+ubah file konfigurasi penanjakan.semerub11.pw dengan `nano /etc/apache2/sites-available/penanjakan.semerub11.pw`
+lalu tambahkan :
+
+> Alias "/js" "var/www/penanjakan.semerub11.pw/public/javascripts"
+
+![13.1](asset/13.1.png)
+
+lalu buka browser dan ketikkan `penanjakan.semerub11.pw/js`
+![13.2](asset/13.2.png)
+
+### Nomer 14
+
+**web http://naik.gunung.semeruyyy.pw sudah bisa diakses hanya dengan menggunakan port 8888. DocumentRoot web berada pada /var/www/naik.gunung.semeruyyy.pw. Dikarenakan web http://naik.gunung.semeruyyy.pw bersifat private**
