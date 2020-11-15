@@ -192,3 +192,16 @@ Seperti gambar berikut :
 lalu restart apaceh2 dengan `service apache2 restart` lalu cek di browser da hasilnya seperti berikut :
 ![11.2](asset/11.2.png)
 ![11.3](asset/11.3.png)
+
+### Nomer 12
+
+**Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.**
+
+Pindah ke directory `etc/apache2/sites-available` pada probolinggo kemudian buka file penanjakan.semerub11.pw dengan `nano penanjakan.semerub11.pw`dan tambahkan konfigurasi
+
+> ErrorDocument 404 /errors/404.html
+> ![12.1](asset/12.1.png)
+
+Lalu buka browser dan akses penanjakan.semerub11.pw/"Input terserah yang penting tidak ada dalam root file"
+contoh `penanjakan.semerub11.pw/a`
+![12.2](asset/12.2.png)
