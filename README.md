@@ -272,3 +272,25 @@ Kemudian buka browser dan akses naik.gunung.semerub11.pw
 ![15.3](asset/15.3.png)
 
 ### Nomer 16
+
+**mengunjungi IP PROBOLINGGO, yang muncul bukan web utama http://semeruyyy.pw melainkan laman default Apache yang bertuliskan “It works!”. Karena dirasa kurang profesional, maka setiap mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke http://semeruyyy.pw**
+
+Untuk nomer 16 di server yang sudah kita buat kita tidak melakukan apa-apa karean ketika kita cek dengan menuliskan di browser 10.151.83.100 otomatis web akan langsung menuju ke semerub11.pw. sehingga untuk nomer 16 kita skip saja.
+Berikut gambarnya :
+![16.1](asset\16.1.png)
+
+### Nomer 17
+
+**Karena pengunjung pada/var/www/penanjakan.semeruyyy.pw/public/images sangat banyak maka semua request gambar yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.**
+
+Pindah directory ke /var/www pada probolinggo
+Edit file penanjakan.semerub11.pw/.htaccess seperti gambar dibawah ini
+Dan edit file penanjakan.semerub11.pw seperti gambar dibawah:
+![17.1](asset/17.1.png).
+Lalu kita cek dengan menuliskan `penanjakan.semerub11.pw/public/images/dadwsemerusadawdaw` di browser
+
+![17.2](asset/17.2.png)
+ketika kita enter ankan keluar seprti ini :
+![17/3](asset/17.3.png)
+
+**SEKIAN LAPORAN RESMI DARI KELLOMPOK B11 JARINGAN KOMPUTER**
