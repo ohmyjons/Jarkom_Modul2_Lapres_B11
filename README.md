@@ -72,4 +72,38 @@ untuk testing pada nameserver di CLIENT arahkan ke ip mojokerto dan matikan bind
 
 ### Nomer 6.
 
-**Mmebuat sub domain http://gunung.semerub11.pw yang didelegasikan di server MOJOKERTO dan diarahkan ke server Probolinggo**
+**Membuat sub domain http://gunung.semerub11.pw yang didelegasikan di server MOJOKERTO dan diarahkan ke server Probolinggo**
+untuk mendelegasikan sub domain di server MOJOKERTO. Server malang kita konfigurasi dulu pada file semerub11.pw, dengan menambahkan
+
+> ns1 IN A 10.151.83.99
+> gunung IN A ns1
+
+seperti gambar di bawah :
+![6.1](asset/6.1.png)
+
+selanjutnya konfigurasi file `/etc/bind/named.conf.options` seperti gambar di bawah :
+![6.2](asset/6.2.png)
+
+restart bind9.
+Konfigurasi server MOJOKERTO. Buka file /etc/bind/named.conf.options
+![6.4](asset/6.4.png)
+
+Lanjut membuat directory delegasi mkdir /etc/bind/delegasi
+Kemudian edit nano /etc/bind/delegasi/gunung.semerub11.pw
+![6.5](asset/6.5.png)
+
+Selanjutnya lakukan test ping gunung.semerub11.pw di gresik
+![6.6](asset/6.6.png)
+
+### Nomer 7
+
+**Membuat subdomain dengan nama http://naik.gunung.semeruyyy.pw, main ini diarahkan ke IP Server PROBOLINGGO.**
+
+Lakukan edit file nano /etc/bind/delegasi/gunung.semerub11.pw pada mojokerto dan tambahkan konfigurasi
+
+> naik IN A 10.151.83.100
+
+![7.1](asset/7.1.png)
+
+Selanjutnya lakukan test ping naik.gunung.semerub11.pw di gresik :
+![7.2](asset/7.2.png)
