@@ -171,3 +171,24 @@ setelah itu untuk setting access buka kembali file konfigurasi penanjakan.semeru
 > <Directory /var/www/penanjakan.semerub12.pw/public>
 > Options +Indexes
 > \</Directory>
+
+dan untuk folder di dalam public yang tidak boleh di access dapat menambahakan
+
+> <Directory /var/www/penanjakan.semerub12.pw/public/images>
+> Options -Indexes
+>
+> \</Directory>
+> <Directory /var/www/penanjakan.semerub12.pw/public/css>
+> Options -Indexes
+> \</Directory>
+>
+> <Directory /var/www/penanjakan.semerub12.pw/public/javascripts>
+> Options -Indexes
+> \</Directory>
+
+Seperti gambar berikut :
+![11.1](asset/11.1.png)
+
+lalu restart apaceh2 dengan `service apache2 restart` lalu cek di browser da hasilnya seperti berikut :
+![11.2](asset/11.2.png)
+![11.3](asset/11.3.png)
