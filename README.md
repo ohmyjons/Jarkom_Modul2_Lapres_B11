@@ -107,3 +107,67 @@ Lakukan edit file nano /etc/bind/delegasi/gunung.semerub11.pw pada mojokerto dan
 
 Selanjutnya lakukan test ping naik.gunung.semerub11.pw di gresik :
 ![7.2](asset/7.2.png)
+
+### Nomer 8
+
+**Membuat domain http://semeruyyy.pw memiliki Document Root pada /var/www/semeruyyy.pw.**
+
+Lakukan perintah `cd /etc/apache2/sites-available` di Probolinggo
+Kemudian edit file nano semerub11.pw dan tambahkan konfigurasi seperti gamabr dibawah ini :
+![8.1](asset/8.1.png)
+
+Selanjutnya pindah ke directory /var/www
+
+Kemudian gunakan perintah wget 10.151.36.202/semeru.pw.zip untuk mendownload file yang sudah disediakan pada soal praktikum dan selanjutnya jangan lupa untuk unzip file
+
+Setelah semua sudah selesai, buka browser dan akses semerub11.pw
+![8.2](asset/8.2.png)
+
+### Nomer 9
+
+**Menggunakan mod rewrite agar urlnya menjadi http://semeruyyy.pw/home.**
+
+Untuk menggunakan mod rewrite menuju ke file rootnya semerub11.pw yaitu dengan
+
+> cd /var/www/semerub11.pw
+
+lalu ubah file .htacces nya dengan menggunakan `nano .htaccess` dan ubha file tersebut seperti gambar berikut :
+![9.1](asset/9.1.png)
+
+lalu cek di browser seperti gambar berikut :
+![9.2](asset/9.2.png)
+
+### Nomer 10 dan 11
+
+**Web http://penanjakan.semeruyyy.pw akan digunakan untuk menyimpan assets file yang memiliki documentRoot pada /var/www/penanjakan.semeruyyy.pw dan memiliki struktur folder sebagai berikut:**
+/var/www/penanjakan.semeruyyy.pw
+
+<ul>
+<li>/public/javascripts
+<li>/public/css
+<li>/public/images
+<li> /errors
+</ul>
+
+**Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan**
+
+Unzip dulu file yag sudah di download di folder `var/www/` yaitu `penanjakna.semeru.pw.zip` lalu rename namanya menjadi `penanjakna.semerub11.pw.zip`.
+
+lalu Pindah ke directory `/etc/apache2/` sites-available dengan perintah `cd /etc/apache2/sites-available` Copy file default menjadi file penanjakan.semerub11.pw, Buka file penanjakan.semerub11.pw, lalu tambahkan
+
+> ServerName penanjakan.semerub12.pw
+> ServerAlias www.penanjakan.semerub12.pw
+
+Kemudian ubah DocumentRoot menjadi /var/www/penanjakan.semerub11.pw seperti gambar berikut :
+![10.1](asset/10.1.png)
+
+lalu jalankan `a2ensite penanjakan.semerub11.pw` untuk mengaktifkan web dan restart apache2.
+
+lalu buka alamat `penanjakan.semerub11.pw` di browser
+![10.2](asset/10.2.png)
+
+setelah itu untuk setting access buka kembali file konfigurasi penanjakan.semerub11.pw dengan `nano /etc/apache2/sites-available/penanjakan.semerub11.pw` lalu tambahkan
+
+> <Directory /var/www/penanjakan.semerub12.pw/public>
+> Options +Indexes
+> \</Directory>
