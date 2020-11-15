@@ -223,3 +223,52 @@ lalu buka browser dan ketikkan `penanjakan.semerub11.pw/js`
 ### Nomer 14
 
 **web http://naik.gunung.semeruyyy.pw sudah bisa diakses hanya dengan menggunakan port 8888. DocumentRoot web berada pada /var/www/naik.gunung.semeruyyy.pw. Dikarenakan web http://naik.gunung.semeruyyy.pw bersifat private**
+
+Edit file pada probolinggo `nano /etc/apache2/ports.conf` dan tambahkan konfigurasi
+
+> Listen 8888
+
+![14.1](asset/14.1.png)
+
+Kemudian pindah directory ke /etc/apache2/sites-available/
+
+copy default menjadi file naik.gunung.semerub11.pw
+
+Dan edit file naik.gunung.semerub11.pw dan tambahkan konfigurasi
+
+> <VirtualHost \*:8888>
+> ServerName naik.gunung.semerub11.pw
+> ServerAlias www.naik.gunung.semerub11.pw
+
+Dan ubah DocumentRoot menjadi /var/www/naik.gunung.semerub11.pw
+
+![14.2](asset/14.2.png)
+
+Selanjutnya Pindah ke directory /var/www dan lakukan wget 10.151.36.202/naik.gunung.semeru.pw.zip untuk mendownload file selanjutnya unzip file dan akses naik.gunung.semerub11.pw di browser
+![14.3](asset/14.3.png)
+
+### Nomer 15
+
+**membuat web http://naik.gunung.semeruyyy.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung” supaya aman dan tidak sembarang orang bisa mengaksesnya.**
+
+Pertama kita akan membuat username dengan perintah htpasswd -c /etc/apache2/.htpasswd semeru
+Kemudian membuat password dengan perintah htpasswd /etc/apache2/.htpasswd kuynaikgunung
+![15.1](asset/15.1.png)
+
+Selanjutnya edit file etc/apache2/sites-enabled/naik.gunung.semerub11.pw untuk menambahkan authentication
+
+> <Directory /var/www/naik.gunung.semerub11.pw>
+
+     AuthType Basic
+     AuthName "Restricted Content"
+     AuthUserFile /etc/apache2/.htpasswd
+     Require valid-user
+
+> \</Directory>
+
+![15.2](asset/15.2.png)
+Kemudian buka browser dan akses naik.gunung.semerub11.pw
+
+![15.3](asset/15.3.png)
+
+### Nomer 16
